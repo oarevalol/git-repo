@@ -170,7 +170,7 @@ def windows_symlink(src, dst):
 
 def os_path_islink(path):
   if isUnix():
-    os.path.islink(path)
+    return os.path.islink(path)
   else:
     if get_windows_symlink(path) is not None:
       return True
@@ -180,7 +180,7 @@ def os_path_islink(path):
 
 def os_path_realpath(file_path):
   if isUnix():
-    os.path.realpath(file_path)
+    return os.path.realpath(file_path)
   else:
     if not os.path.exists(file_path):
       return file_path
